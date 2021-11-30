@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arduino Servo</title>
+	<style>
+		h1{
+			text-align: center;
+			color: purple;
+			text-shadow: 2px 2px;
+		}
+	</style>
+</head>
+<body>
+	<h1> Arduino with Shenon </h1>
+<h2>Connections</h2>
+<img src="1.png" width="800" height="800">
+
+<h2>THE CODE</h2>
+
+<p>
+
+#include "Servo.h" <br>
+// Create a new servo object:<br>
+Servo myservo;<br>
+// Define the servo pin:<br>
+#define servoPin 9<br>
+// Create a variable to store the servo position:<br>
+int angle = 0;<br>
+void setup() {<br>
+  // Attach the Servo variable to a pin:<br>
+  myservo.attach(servoPin);<br>
+}
+void loop() {<br>
+  // Tell the servo to go to a particular angle:<br>
+  myservo.write(90);<br>
+  delay(1000);<br>
+  myservo.write(180);<br>
+  delay(1000);<br>
+  myservo.write(0);<br>
+  delay(1000);<br>
+  for (angle = 0; angle <= 180; angle += 1) {<br>
+    myservo.write(angle);<br>
+    delay(15);<br>
+  }
+  // And back from 180 to 0 degrees:<br>
+  for (angle = 180; angle >= 0; angle -= 1) {<br>
+    myservo.write(angle);<br>
+    delay(30);<br>
+  }<br>
+  delay(1000);<br>
+
+}<br>
+
+	
+
+</p>
+
+</body>
+</html>
